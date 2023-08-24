@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane minHeight="650.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardViewController">
+   <children>
+      <Label layoutX="168.0" layoutY="89.0" text="Dashboard" />
+   </children>
+</AnchorPane>

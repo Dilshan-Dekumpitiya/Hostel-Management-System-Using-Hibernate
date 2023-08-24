@@ -8,7 +8,7 @@ import org.hostelManagement.util.FactoryConfiguration;
 public class Main {
 
     public static void main(String[] args) {
-        Student student=new Student("S004","Deku","Matara","0772985802","2022-05-22","Male");
+        Student student=new Student("S005","Deku","Matara","0772985802","2022-05-22","Male");
 
         /* Need to use try with resource --> firstly try session,
         Another time can't run the Session, after that close the session object */

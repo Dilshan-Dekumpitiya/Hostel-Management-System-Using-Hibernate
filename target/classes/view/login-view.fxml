@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.LoginViewController">
+   <children>
+      <Label layoutX="70.0" layoutY="44.0" text="Login" />
+      <JFXButton layoutX="189.0" layoutY="255.0" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="77.0" styleClass="btnLogin" stylesheets="@../stylesheet/stylesheet.css" text="Login" />
+   </children>
+</AnchorPane>
