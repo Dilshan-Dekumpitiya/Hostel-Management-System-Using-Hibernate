@@ -8,3 +8,22 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
+
+.dashboardleftsidepane{
+    -fx-background-color: #3d3d3d ; /*#1F2127*/
+    -fx-background-radius: 10;
+}
+
+.dashboardrightsidepane{
+    -fx-background-color:   #3d3d3d;
+    -fx-background-radius: 10;
+}
+
+.dashboardbtn{
+    -fx-background-color: #34495e; /*#34495e*/
+    -fx-background-radius: 10;
+    -fx-min-width: 250px;
+    -fx-min-height: 50px;
+    -fx-max-width: 250px;
+    -fx-max-height: 50px;
+}

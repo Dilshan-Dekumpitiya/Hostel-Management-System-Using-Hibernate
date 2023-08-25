@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane minHeight="650.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardViewController">
+<AnchorPane fx:id="dashboardMainPane" minHeight="650.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardViewController">
    <children>
-      <Label layoutX="168.0" layoutY="89.0" text="Dashboard" />
+      <Label layoutX="198.0" layoutY="25.0" text="Dashboard" />
+      <Pane layoutX="14.0" layoutY="45.0" prefHeight="639.0" prefWidth="275.0" styleClass="dashboardleftsidepane" stylesheets="@../stylesheet/stylesheet.css">
+         <children>
+            <JFXButton layoutX="13.0" layoutY="568.0" onAction="#btnLogoutOnAction" styleClass="dashboardbtn" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="300.0" layoutY="47.0" prefHeight="639.0" prefWidth="1054.0" styleClass="dashboardrightsidepane" stylesheets="@../stylesheet/stylesheet.css" />
    </children>
 </AnchorPane>
