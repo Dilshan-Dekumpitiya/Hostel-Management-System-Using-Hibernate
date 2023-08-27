@@ -6,18 +6,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="dashboardMainPane" minHeight="650.0" minWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardViewController">
+<AnchorPane fx:id="dashboardMainPane" minHeight="800.0" minWidth="1520.0" prefHeight="800.0" prefWidth="1520.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardViewController">
    <children>
-      <Label layoutX="198.0" layoutY="25.0" text="Dashboard" />
-      <Pane layoutX="14.0" layoutY="45.0" prefHeight="639.0" prefWidth="275.0" styleClass="dashboardleftsidepane" stylesheets="@../stylesheet/stylesheet.css">
+      <Label layoutX="190.0" layoutY="14.0" text="Dashboard" />
+      <Pane layoutX="32.0" layoutY="61.0" prefHeight="717.0" prefWidth="275.0" styleClass="dashboardleftsidepane" stylesheets="@../stylesheet/stylesheet.css">
          <children>
-            <JFXButton layoutX="13.0" layoutY="568.0" onAction="#btnLogoutOnAction" styleClass="dashboardbtn" text="Log Out" textFill="WHITE">
+            <JFXButton layoutX="13.0" layoutY="630.0" onAction="#btnLogoutOnAction" styleClass="dashboardbtn" text="Log Out" textFill="WHITE">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="13.0" layoutY="35.0" onAction="#btnLogoutOnAction" styleClass="dashboardbtn" text="Dashboard" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="20.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane layoutX="300.0" layoutY="47.0" prefHeight="639.0" prefWidth="1054.0" styleClass="dashboardrightsidepane" stylesheets="@../stylesheet/stylesheet.css" />
+      <AnchorPane layoutX="338.0" layoutY="61.0" prefHeight="717.0" prefWidth="1160.0" styleClass="dashboardrightsidepane" stylesheets="@../stylesheet/stylesheet.css" />
    </children>
 </AnchorPane>

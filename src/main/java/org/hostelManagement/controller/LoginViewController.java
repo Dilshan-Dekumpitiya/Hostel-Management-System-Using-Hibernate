@@ -24,6 +24,7 @@ public class LoginViewController {
 
         stage2.setMaximized(true);
 
+
         stage.close();
 
         stage2.show();
