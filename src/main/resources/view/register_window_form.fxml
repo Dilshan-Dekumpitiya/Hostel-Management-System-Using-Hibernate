@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.RegisterWindowFormController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="550.0" opacity="0.8" pickOnBounds="true">
+         <image>
+            <Image url="@../img/background.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="44.0" layoutY="57.0" prefHeight="486.0" prefWidth="463.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Label layoutX="27.0" layoutY="14.0" text="Register" textFill="#09076c">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUserName" focusTraversable="false" layoutX="98.0" layoutY="115.0" onAction="#txtUserNameOnAction" prefHeight="37.0" prefWidth="267.0" promptText="user name" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <PasswordField fx:id="txtPassword" focusTraversable="false" layoutX="98.0" layoutY="195.0" onAction="#txtPasswordOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <PasswordField fx:id="txtRePassword" focusTraversable="false" layoutX="98.0" layoutY="270.0" onAction="#txtRePasswordOnAction" prefHeight="37.0" prefWidth="267.0" promptText="re-enter password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <PasswordField fx:id="txtPasswordHint" focusTraversable="false" layoutX="98.0" layoutY="348.0" onAction="#txtPasswordHintOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password hint" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <Label layoutX="96.0" layoutY="90.0" text="User Name">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="168.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="96.0" layoutY="243.0" text="Re-enter Password">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="321.0" text="Password hint">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnRegister" buttonType="RAISED" focusTraversable="false" layoutX="127.0" layoutY="410.0" onAction="#btnRegisterOnAction" prefHeight="44.0" prefWidth="210.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="button_login" stylesheets="@../style/login_page.css" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

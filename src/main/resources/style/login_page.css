@@ -1,0 +1,14 @@
+.button_login{
+    -fx-background-color: linear-gradient(to right, #09076c 0%, #9e0368 100%);
+}
+.button_register{
+    -fx-background-color: linear-gradient(to right, #008011 0%, #9e0368 100%);
+}
+
+.txt_border{
+    -fx-border-color:linear-gradient(to right, #09076c 0%, #9e0368 100%); ;
+}
+.font{
+
+font-family: "Sofia", sans-serif;
+}

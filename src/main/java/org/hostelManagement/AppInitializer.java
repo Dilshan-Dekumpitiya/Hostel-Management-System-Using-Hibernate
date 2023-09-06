@@ -16,13 +16,13 @@ public class AppInitializer extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        Parent load = FXMLLoader.load(getClass().getResource("/view/login-view.fxml"));
-        Scene scene = new Scene(load);
-        primaryStage.setScene(scene);
-
-      //  primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/main_window_form.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        stage.setTitle("D24 Hostel Management System");
+        stage.show();
     }
 }
