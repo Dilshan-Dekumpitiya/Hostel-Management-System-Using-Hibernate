@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainRoot" minHeight="800.0" minWidth="1530.0" prefHeight="800.0" prefWidth="1530.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardWindowFormController">
+   <children>
+      <ImageView fitHeight="800.0" fitWidth="1400.0" opacity="0.8" pickOnBounds="true">
+         <image>
+            <Image url="@../img/background.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="211.0" layoutY="65.0" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="490.0" layoutY="85.0" text="D" textFill="#09076c">
+                     <font>
+                        <Font name="Segoe Print" size="120.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="538.0" layoutY="170.0" text="24" textFill="#9e0368">
+                     <font>
+                        <Font name="Segoe Print" size="120.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="338.0" text="Hostel Management">
+                     <font>
+                        <Font name="Segoe Print" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTime" layoutX="411.0" layoutY="502.0" prefHeight="81.0" prefWidth="430.0" text="00:00">
+                     <font>
+                        <Font size="55.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblDate" layoutX="469.0" layoutY="583.0" prefHeight="81.0" prefWidth="315.0" text="DD:MM:YYYY">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="14.0" layoutY="56.0" prefHeight="714.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="54.0" onAction="#btnCustomerOnAction" style="-fx-background-color: #ECF2FF;">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/student.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="178.0" onAction="#btnRoomOnAction" style="-fx-background-color: #ECF2FF;">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/room.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="308.0" onAction="#btnResavationOnAction" style="-fx-background-color: #ECF2FF;">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/reservation.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="440.0" onAction="#btnUserOnAction" style="-fx-background-color: #ECF2FF;">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="571.0" onAction="#btnLogoutOnAction" style="-fx-background-color: #ECF2FF;">
+               <graphic>
+                  <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1162.0" layoutY="14.0" prefHeight="39.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Label fx:id="lblDateTop" layoutX="11.0" layoutY="5.0" prefHeight="32.0" prefWidth="170.0" text="DD:MM:YYYY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="953.0" layoutY="17.0" prefHeight="39.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <Label fx:id="lblTimeTop" layoutX="21.0" layoutY="3.0" prefHeight="32.0" prefWidth="154.0" text="00:00">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
