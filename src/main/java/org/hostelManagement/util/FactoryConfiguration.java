@@ -5,6 +5,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hostelManagement.entitiy.Reservation;
+import org.hostelManagement.entitiy.Room;
+import org.hostelManagement.entitiy.Student;
 import org.hostelManagement.entitiy.User;
 
 
@@ -26,10 +29,10 @@ public class FactoryConfiguration {
 
         // Adding annotated classes to the metadataSources
         metadataSources
-                .addAnnotatedClass(User.class);
-               /*addAnnotatedClass(Room.class).
-                addAnnotatedClass(Reservation.class).
-                addAnnotatedClass(User.class);*/
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Room.class)
+                .addAnnotatedClass(Reservation.class);
 
         // Building Metadata from the MetadataSources
         Metadata metadata = metadataSources.getMetadataBuilder().build();

@@ -38,14 +38,9 @@ public class DashboardWindowFormController implements Initializable {
     }
 
     @FXML
-    void btnCustomerOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/student_window_form.fxml"));
-            loadWindow(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    void btnStudentOnAction(ActionEvent event) {
+
+        setUI("student_window_form");
 
     }
 
@@ -102,5 +97,14 @@ public class DashboardWindowFormController implements Initializable {
         root.getChildren().add(anchorPane);
     }
 
+    private void setUI(String windowName){
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/"+windowName+".fxml"));
+            loadWindow(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

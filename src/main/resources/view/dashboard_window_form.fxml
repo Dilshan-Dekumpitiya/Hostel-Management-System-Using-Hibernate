@@ -50,7 +50,7 @@
       </Pane>
       <AnchorPane layoutX="14.0" layoutY="56.0" prefHeight="714.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="54.0" onAction="#btnCustomerOnAction" style="-fx-background-color: #ECF2FF;">
+            <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="54.0" onAction="#btnStudentOnAction" style="-fx-background-color: #ECF2FF;">
                <graphic>
                   <ImageView fitHeight="72.0" fitWidth="96.0" pickOnBounds="true">
                      <image>
