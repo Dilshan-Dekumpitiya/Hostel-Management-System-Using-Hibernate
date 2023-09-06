@@ -31,10 +31,8 @@ public class DashboardWindowFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         TimeDate.localDateAndTime(lblDate, lblTime);
         TimeDate.localDateAndTime(lblDateTop, lblTimeTop);
-
     }
 
     @FXML
@@ -57,7 +55,6 @@ public class DashboardWindowFormController implements Initializable {
         }
 
     }
-
 
     @FXML
     void btnResavationOnAction(ActionEvent event) {
@@ -92,11 +89,6 @@ public class DashboardWindowFormController implements Initializable {
         }
     }
 
-    private void loadWindow(AnchorPane anchorPane) {
-        root.getChildren().clear();
-        root.getChildren().add(anchorPane);
-    }
-
     private void setUI(String windowName){
         AnchorPane anchorPane = null;
         try {
@@ -105,6 +97,11 @@ public class DashboardWindowFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void loadWindow(AnchorPane anchorPane) {
+        root.getChildren().clear();
+        root.getChildren().add(anchorPane);
     }
 
 }

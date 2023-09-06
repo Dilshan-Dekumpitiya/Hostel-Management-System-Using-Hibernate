@@ -267,6 +267,7 @@ public class StudentFormController implements Initializable {
                     btnAdd.setDisable(false);
                     new Alert(Alert.AlertType.CONFIRMATION, "Student Update Successful :)!!!").show();
                     clearAll();
+                    refreshTable();
                 } else {
                     new Alert(Alert.AlertType.ERROR, "Student not Updated :( !!!").show();
 
