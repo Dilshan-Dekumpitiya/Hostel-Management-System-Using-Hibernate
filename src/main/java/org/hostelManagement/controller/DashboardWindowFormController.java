@@ -37,59 +37,25 @@ public class DashboardWindowFormController implements Initializable {
 
     @FXML
     void btnStudentOnAction(ActionEvent event) {
-
         setUI("student_window_form");
-
     }
 
 
     @FXML
     void btnRoomOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/room_window_form.fxml"));
-            loadWindow(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setUI("room_window_form");
     }
 
 
     @FXML
     void btnResavationOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/reservation_window_form.fxml"));
-            loadWindow(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        setUI("reservation_window_form");
     }
 
 
     @FXML
     void btnUserOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/user_window_form.fxml"));
-            loadWindow(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void btnLogoutOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/login_window_form.fxml"));
-            loadWindow(anchorPane);
-            mainRoot.getChildren().clear();
-            mainRoot.getChildren().add(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        setUI("user_window_form");
     }
 
     private void setUI(String windowName){
@@ -105,6 +71,19 @@ public class DashboardWindowFormController implements Initializable {
     private void loadWindow(AnchorPane anchorPane) {
         root.getChildren().clear();
         root.getChildren().add(anchorPane);
+    }
+
+    @FXML
+    void btnLogoutOnAction(ActionEvent event) {
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/login_window_form.fxml"));
+            loadWindow(anchorPane);
+            mainRoot.getChildren().clear();
+            mainRoot.getChildren().add(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
