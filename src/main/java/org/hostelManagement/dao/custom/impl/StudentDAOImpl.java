@@ -36,7 +36,6 @@ public class StudentDAOImpl implements StudentDAO {
 
         session.persist(student);
 
-
         transaction.commit();
         session.close();
 
@@ -49,7 +48,6 @@ public class StudentDAOImpl implements StudentDAO {
         Transaction transaction = session.beginTransaction();
 
         session.update(student);
-
 
         transaction.commit();
         session.close();
@@ -93,9 +91,7 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-
         Student student = session.get(Student.class, id);
-
 
         transaction.commit();
         session.close();
@@ -110,12 +106,24 @@ public class StudentDAOImpl implements StudentDAO {
 
         NativeQuery nativeQuery = session.createNativeQuery("SELECT DISTINCT * FROM student s JOIN reservation r on s.student_id = r.student_student_id WHERE r.status='un-paid'");
         nativeQuery.addEntity(Student.class);
-        List<Student> customers = nativeQuery.list();
+        List<Student> students = nativeQuery.list();
 
 
         transaction.commit();
         session.close();
 
-        return customers;
+        return students;
+    }
+
+    @Override
+    public List<Student> searchStudentByText(String text) {
+        Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+
+        Query query = session.createQuery("FROM Student WHERE name LIKE '%" + text + "%'" );
+        List<Student> list = query.list();
+
+        return list;
+
+
     }
 }

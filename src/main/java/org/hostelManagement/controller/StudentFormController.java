@@ -22,7 +22,9 @@ import org.hostelManagement.util.regex.RegExType;
 import java.net.URL;
 import java.sql.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class StudentFormController implements Initializable {
     @FXML
@@ -99,8 +101,27 @@ public class StudentFormController implements Initializable {
         getAll();
         setCellValueFactory();
         regExFactory = RegExFactory.getInstance();
+
+        txtSearch.textProperty().addListener((observableValue, previous, current) -> {
+            if (!Objects.equals(previous, current)) {
+                tblStudents.getItems().clear();
+                List<StudentTM> collect = studentBO.searchStudentByText(current).stream().map(this::toStudentTM).collect(Collectors.toList());
+                tblStudents.setItems(FXCollections.observableArrayList(collect));
+            }
+        });
     }
 
+    private StudentTM toStudentTM(StudentDTO studentDto) {
+        StudentTM studentTm = new StudentTM();
+        studentTm.setStudent_id(studentDto.getStudent_id());
+        studentTm.setName(studentDto.getName());
+        studentTm.setAddress(studentDto.getAddress());
+        studentTm.setContact(studentDto.getContact());
+        studentTm.setGender(studentDto.getGender());
+        studentTm.setDob(studentDto.getDob());
+
+        return studentTm;
+    }
     private void getAll() {
 
 

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface StudentDAO extends CrudDAO<Student> {
     List<Student> getUnpaidStudents();
+    List<Student> searchStudentByText(String text);
+
 }

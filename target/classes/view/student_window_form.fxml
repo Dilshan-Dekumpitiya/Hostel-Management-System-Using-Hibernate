@@ -42,7 +42,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtName" layoutX="197.0" layoutY="531.0" prefHeight="33.0" prefWidth="282.0" promptText="Irosh" />
+      <TextField fx:id="txtName" layoutX="197.0" layoutY="531.0" prefHeight="33.0" prefWidth="282.0" promptText="Dilshan" />
       <Label layoutX="777.0" layoutY="484.0" text="Date Of Birth">
          <font>
             <Font size="20.0" />
@@ -77,13 +77,13 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="199.0" layoutY="581.0" prefHeight="33.0" prefWidth="282.0" promptText="Hokandara" />
+      <TextField fx:id="txtAddress" layoutX="199.0" layoutY="581.0" prefHeight="33.0" prefWidth="282.0" promptText="Matugama" />
       <Label layoutX="77.0" layoutY="633.0" text="Contact">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtContact" layoutX="199.0" layoutY="628.0" prefHeight="33.0" prefWidth="282.0" promptText="0714066967" />
+      <TextField fx:id="txtContact" layoutX="199.0" layoutY="628.0" prefHeight="33.0" prefWidth="282.0" promptText="0772985802" />
       <DatePicker fx:id="cmbDob" layoutX="959.0" layoutY="480.0" showWeekNumbers="true" style="-fx-background-color: #DFF6FF;" />
       <RadioButton fx:id="rBtnMale" focusTraversable="false" layoutX="959.0" layoutY="541.0" mnemonicParsing="false" text="Male">
          <toggleGroup>

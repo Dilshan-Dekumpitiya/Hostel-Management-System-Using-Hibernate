@@ -17,7 +17,7 @@
             <Image url="@../img/background.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="24.0" layoutY="22.0" prefHeight="114.0" prefWidth="377.0" style="-fx-background-radius: 30;" styleClass="button_login" stylesheets="@../style/login_page.css">
+      <AnchorPane layoutX="24.0" layoutY="22.0" prefHeight="114.0" prefWidth="377.0" style="-fx-background-radius: 30;" styleClass="button_login" stylesheets="@../style/stylesheet.css">
          <children>
             <Label layoutX="105.0" text="Reservation" textFill="WHITE">
                <font>

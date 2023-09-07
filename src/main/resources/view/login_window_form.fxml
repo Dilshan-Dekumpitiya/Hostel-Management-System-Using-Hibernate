@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="800.0" fitWidth="1535.0" opacity="0.8" pickOnBounds="true">
          <image>
-            <Image url="@../img/background.jpg" />
+            <Image url="@../img/main.jpg" />
          </image>
       </ImageView>
       <AnchorPane layoutX="371.0" layoutY="77.0" prefHeight="646.0" prefWidth="778.0" style="-fx-background-color: white; -fx-border-radius: 20px; -fx-background-radius: 20px;">
@@ -24,14 +24,14 @@
             <DropShadow height="255.0" radius="127.0" width="255.0" />
          </effect>
          <children>
-            <TextField fx:id="txtUserName" focusTraversable="false" layoutX="416.0" layoutY="270.0" onAction="#txtUserNameOnAction" prefHeight="37.0" prefWidth="267.0" promptText="user name" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <TextField fx:id="txtUserName" focusTraversable="false" layoutX="416.0" layoutY="270.0" onAction="#txtUserNameOnAction" prefHeight="37.0" prefWidth="267.0" promptText="user name" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/stylesheet.css" />
             <Separator layoutX="357.0" layoutY="33.0" orientation="VERTICAL" prefHeight="558.0" prefWidth="12.0" />
-            <Label layoutX="94.0" layoutY="180.0" text="D" textFill="#09076c">
+            <Label layoutX="94.0" layoutY="180.0" text="D" textFill="#7776bf">
                <font>
                   <Font name="Segoe Print" size="80.0" />
                </font>
             </Label>
-            <Label layoutX="140.0" layoutY="230.0" text="24" textFill="#9e0368">
+            <Label layoutX="140.0" layoutY="230.0" text="24" textFill="#006bc9">
                <font>
                   <Font name="Segoe Print" size="80.0" />
                </font>
@@ -41,7 +41,7 @@
                   <Font name="Segoe Print" size="28.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnLogin" buttonType="RAISED" focusTraversable="false" layoutX="445.0" layoutY="441.0" onAction="#btnLoginOnAction" prefHeight="44.0" prefWidth="210.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="button_login" stylesheets="@../style/login_page.css" text="Login" textFill="WHITE">
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" focusTraversable="false" layoutX="445.0" layoutY="441.0" onAction="#btnLoginOnAction" prefHeight="44.0" prefWidth="210.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="button_login" stylesheets="@../style/stylesheet.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -56,18 +56,18 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="389.0" layoutY="14.0" text="Welcome..." textFill="#09076c">
+            <Label layoutX="389.0" layoutY="14.0" text="Welcome..." textFill="#2e2cb9">
                <font>
                   <Font name="Segoe Print" size="46.0" />
                </font>
             </Label>
-            <Label layoutX="400.0" layoutY="176.0" stylesheets="@../style/login_page.css" text="Login" textFill="#09076c">
+            <Label layoutX="400.0" layoutY="176.0" stylesheets="@../style/stylesheet.css" text="Login" textFill="#09076c">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
             </Label>
             <RadioButton fx:id="btnRadio" focusTraversable="false" layoutX="420.0" layoutY="398.0" mnemonicParsing="false" onAction="#btnRadioOnAction" text="Show Password" />
-            <PasswordField fx:id="txtPassword" focusTraversable="false" layoutX="414.0" layoutY="355.0" onAction="#txtPasswordOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" />
+            <PasswordField fx:id="txtPassword" focusTraversable="false" layoutX="414.0" layoutY="355.0" onAction="#txtPasswordOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/stylesheet.css" />
             <Separator layoutX="389.0" layoutY="525.0" prefHeight="2.0" prefWidth="350.0" />
             <Separator layoutX="389.0" layoutY="159.0" prefHeight="2.0" prefWidth="350.0" />
             <Label layoutX="414.0" layoutY="566.0" text="* or Register user ">
@@ -75,7 +75,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXButton fx:id="btnRegister" buttonType="RAISED" focusTraversable="false" layoutX="581.0" layoutY="556.0" onAction="#btnRegisterOnAction" prefHeight="43.0" prefWidth="117.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="button_login" stylesheets="@../style/login_page.css" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btnRegister" buttonType="RAISED" focusTraversable="false" layoutX="581.0" layoutY="556.0" onAction="#btnRegisterOnAction" prefHeight="43.0" prefWidth="117.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px;" styleClass="button_login" stylesheets="@../style/stylesheet.css" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -85,7 +85,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtShowPassword" editable="false" focusTraversable="false" layoutX="414.0" layoutY="355.0" onAction="#txtUserNameOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/login_page.css" visible="false" />
+            <TextField fx:id="txtShowPassword" editable="false" focusTraversable="false" layoutX="414.0" layoutY="355.0" onAction="#txtUserNameOnAction" prefHeight="37.0" prefWidth="267.0" promptText="password" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" styleClass="txt_border" stylesheets="@../style/stylesheet.css" visible="false" />
          </children>
       </AnchorPane>
    </children>

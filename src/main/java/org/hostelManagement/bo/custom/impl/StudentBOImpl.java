@@ -107,4 +107,26 @@ public class StudentBOImpl implements StudentBO<StudentDTO> {
 
         return studentDTOS;
     }
+
+    @Override
+    public List<StudentDTO> searchStudentByText(String text) {
+        List<Student> students = studentDAO.searchStudentByText(text);
+        List<StudentDTO> studentDTOS = new ArrayList<>();
+
+        for (Student student : students) {
+
+            StudentDTO studentDTO = new StudentDTO();
+
+            studentDTO.setStudent_id(student.getStudent_id());
+            studentDTO.setName(student.getName());
+            studentDTO.setAddress(student.getAddress());
+            studentDTO.setContact(student.getContact());
+            studentDTO.setGender(student.getGender());
+            studentDTO.setDob(student.getDob());
+
+            studentDTOS.add(studentDTO);
+        }
+
+        return studentDTOS;
+    }
 }

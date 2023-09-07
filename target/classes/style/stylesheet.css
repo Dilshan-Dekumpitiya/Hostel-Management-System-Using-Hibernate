@@ -12,3 +12,8 @@
 
 font-family: "Sofia", sans-serif;
 }
+
+.btnMainLogin{
+    -fx-background-color: #00a8ff ;
+    -fx-background-radius: 15px;
+}
