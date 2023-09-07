@@ -11,17 +11,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.RoomWindowFormController">
+<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1301.0" style="-fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.RoomWindowFormController">
    <children>
-      <TableView fx:id="tblRooms" layoutX="61.0" layoutY="119.0" onMouseClicked="#tblRoomsOnMouseClicked" prefHeight="317.0" prefWidth="965.0">
+      <TableView fx:id="tblRooms" layoutX="61.0" layoutY="119.0" onMouseClicked="#tblRoomsOnMouseClicked" prefHeight="317.0" prefWidth="1192.0">
          <columns>
-            <TableColumn fx:id="colRoomTypeId" prefWidth="185.00002670288086" text="Room Type ID" />
-            <TableColumn fx:id="colRoomType" prefWidth="328.00001525878906" text="Type" />
-            <TableColumn fx:id="colKeyMoney" prefWidth="238.0" text="Key Money (LKR)" />
-            <TableColumn fx:id="colQty" prefWidth="213.0" text="RoomQty" />
+            <TableColumn fx:id="colRoomTypeId" prefWidth="264.0" text="Room Type ID" />
+            <TableColumn fx:id="colRoomType" prefWidth="336.0" text="Type" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="308.0" text="Key Money (LKR)" />
+            <TableColumn fx:id="colQty" prefWidth="283.0" text="RoomQty" />
          </columns>
       </TableView>
-      <Separator layoutX="26.0" layoutY="469.0" prefHeight="0.0" prefWidth="1036.0" />
+      <Separator layoutX="26.0" layoutY="469.0" prefHeight="3.0" prefWidth="1216.0" />
       <Label layoutX="59.0" layoutY="13.0" text="Manage Rooms" textFill="#112d4e">
          <font>
             <Font size="43.0" />
@@ -38,20 +38,20 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="600.0" layoutY="519.0" text="Key Money">
+      <Label layoutX="683.0" layoutY="519.0" text="Key Money">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtKeyMoney" layoutX="722.0" layoutY="514.0" prefHeight="33.0" prefWidth="282.0" promptText="1000.00" />
-      <Label layoutX="600.0" layoutY="580.0" text="Qty">
+      <TextField fx:id="txtKeyMoney" layoutX="943.0" layoutY="518.0" prefHeight="33.0" prefWidth="282.0" promptText="1000.00" />
+      <Label layoutX="683.0" layoutY="582.0" text="Qty">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQty" layoutX="722.0" layoutY="575.0" prefHeight="33.0" prefWidth="282.0" promptText="1" />
-      <Separator layoutX="14.0" layoutY="66.0" prefHeight="0.0" prefWidth="1036.0" />
-      <ButtonBar layoutX="644.0" layoutY="640.0" prefHeight="52.0" prefWidth="367.0">
+      <TextField fx:id="txtQty" layoutX="943.0" layoutY="578.0" prefHeight="33.0" prefWidth="282.0" promptText="1" />
+      <Separator layoutX="14.0" layoutY="66.0" prefHeight="3.0" prefWidth="1236.0" />
+      <ButtonBar layoutX="849.0" layoutY="640.0" prefHeight="52.0" prefWidth="367.0">
          <buttons>
             <JFXButton fx:id="btnAdd" buttonType="RAISED" onAction="#btnAddOnAction" prefHeight="35.0" prefWidth="151.0" style="-fx-background-color: lightgreen;" text="Add">
                <font>
@@ -68,7 +68,7 @@
                </font></JFXButton>
          </buttons>
       </ButtonBar>
-      <TextField fx:id="txtSearch" layoutX="743.0" layoutY="78.0" onAction="#txtSearchOnAction" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="33.0" prefWidth="282.0" promptText="Search Bar" />
+      <TextField fx:id="txtSearch" layoutX="966.0" layoutY="77.0" onAction="#txtSearchOnAction" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="33.0" prefWidth="282.0" promptText="Search Bar" />
       <ComboBox fx:id="cmbType" layoutX="203.0" layoutY="580.0" prefHeight="31.0" prefWidth="282.0" />
    </children>
 </AnchorPane>

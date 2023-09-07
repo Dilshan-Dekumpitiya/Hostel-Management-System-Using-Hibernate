@@ -10,14 +10,14 @@
 
 <AnchorPane fx:id="mainRoot" minHeight="800.0" minWidth="1530.0" prefHeight="800.0" prefWidth="1530.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.DashboardWindowFormController">
    <children>
-      <ImageView fitHeight="800.0" fitWidth="1400.0" opacity="0.8" pickOnBounds="true">
+      <ImageView fitHeight="800.0" fitWidth="1530.0" opacity="0.8" pickOnBounds="true">
          <image>
             <Image url="@../img/background.jpg" />
          </image>
       </ImageView>
-      <Pane layoutX="211.0" layoutY="65.0" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+      <Pane layoutX="211.0" layoutY="65.0" prefHeight="706.0" prefWidth="1301.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+            <AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1300.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
                <children>
                   <Label layoutX="490.0" layoutY="85.0" text="D" textFill="#09076c">
                      <font>
@@ -44,11 +44,16 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
+                  <Label layoutX="104.0" layoutY="40.0" text="Welcome" textFill="#09076c">
+                     <font>
+                        <Font name="Segoe Print" size="77.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
       </Pane>
-      <AnchorPane layoutX="14.0" layoutY="56.0" prefHeight="714.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+      <AnchorPane layoutX="14.0" layoutY="65.0" prefHeight="706.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
             <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="27.0" layoutY="54.0" onAction="#btnStudentOnAction" style="-fx-background-color: #ECF2FF;">
                <graphic>

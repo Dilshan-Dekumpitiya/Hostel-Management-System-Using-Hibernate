@@ -8,32 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.ReservationWindowFormController">
+<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1301.0" style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.ReservationWindowFormController">
     <children>
         <Label layoutX="59.0" layoutY="14.0" text="Manage Reservations" textFill="#112d4e">
             <font>
                 <Font size="43.0" />
             </font>
         </Label>
-        <TableView fx:id="tblReservations" layoutX="74.0" layoutY="122.0" onMouseClicked="#tblReservationsOnMouseClicked" prefHeight="289.0" prefWidth="1023.0">
+        <TableView fx:id="tblReservations" layoutX="74.0" layoutY="122.0" onMouseClicked="#tblReservationsOnMouseClicked" prefHeight="289.0" prefWidth="1173.0">
             <columns>
                 <TableColumn fx:id="colReservationId" prefWidth="137.99996948242188" text="Reservation ID" />
-                <TableColumn fx:id="colStudentId" prefWidth="237.0" text="Student ID" />
-                <TableColumn fx:id="colDate" prefWidth="174.0" text="Date" />
-                <TableColumn fx:id="colRoomType" prefWidth="285.0" text="Room Type" />
-                <TableColumn fx:id="colStatus" prefWidth="188.0" text="Status" />
+                <TableColumn fx:id="colStudentId" prefWidth="288.0" text="Student ID" />
+                <TableColumn fx:id="colDate" prefWidth="223.0" text="Date" />
+                <TableColumn fx:id="colRoomType" prefWidth="233.0" text="Room Type" />
+                <TableColumn fx:id="colStatus" prefWidth="290.0" text="Status" />
             </columns>
         </TableView>
-        <TableView fx:id="tblRoom" layoutX="74.0" layoutY="466.0" prefHeight="234.0" prefWidth="1023.0">
+        <TableView fx:id="tblRoom" layoutX="74.0" layoutY="466.0" prefHeight="234.0" prefWidth="1173.0">
             <columns>
-                <TableColumn fx:id="colRoomID" prefWidth="253.0" text="Room ID" />
-                <TableColumn fx:id="colType" prefWidth="409.0" text="Type" />
-                <TableColumn fx:id="colKeyMoney" prefWidth="200.0" text="Key Money" />
-                <TableColumn fx:id="colQty" prefWidth="160.0" text="Qty" />
+                <TableColumn fx:id="colRoomID" prefWidth="310.0" text="Room ID" />
+                <TableColumn fx:id="colType" prefWidth="352.0" text="Type" />
+                <TableColumn fx:id="colKeyMoney" prefWidth="280.0" text="Key Money" />
+                <TableColumn fx:id="colQty" prefWidth="230.0" text="Qty" />
             </columns>
         </TableView>
         <ButtonBar layoutX="736.0" layoutY="674.0" prefHeight="40.0" prefWidth="319.0" />
-        <ButtonBar layoutX="74.0" layoutY="72.0" prefHeight="40.0" prefWidth="1023.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+        <ButtonBar layoutX="74.0" layoutY="72.0" prefHeight="40.0" prefWidth="1173.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <buttons>
                 <JFXButton fx:id="btnViewUnpaidStudent" buttonType="RAISED" onAction="#btnViewUnpaidStudentOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: lightyellow;" text="View Unpaid">
                     <font>
@@ -47,7 +47,7 @@
                 </JFXButton>
             </buttons>
         </ButtonBar>
-        <ButtonBar layoutX="74.0" layoutY="418.0" prefHeight="40.0" prefWidth="1023.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+        <ButtonBar layoutX="74.0" layoutY="418.0" prefHeight="40.0" prefWidth="1173.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <buttons>
                 <JFXButton fx:id="btnMarkAsPaid" buttonType="RAISED" onAction="#btnMarkAsPaidOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: lightblue;" text="Mark as paid">
                     <font>

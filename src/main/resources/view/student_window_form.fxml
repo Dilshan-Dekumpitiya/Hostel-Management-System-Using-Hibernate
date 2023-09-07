@@ -13,19 +13,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" prefHeight="706.0" prefWidth="1170.0" style="-fx-background-radius: 40;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.StudentFormController">
+<AnchorPane fx:id="pane" prefHeight="706.0" prefWidth="1301.0" style="-fx-background-radius: 40;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.StudentFormController">
    <children>
-      <TableView fx:id="tblStudents" layoutX="61.0" layoutY="119.0" onMouseClicked="#tblStudentOnMouseClicked" prefHeight="317.0" prefWidth="965.0">
+      <TableView fx:id="tblStudents" layoutX="61.0" layoutY="119.0" onMouseClicked="#tblStudentOnMouseClicked" prefHeight="317.0" prefWidth="1190.0">
          <columns>
             <TableColumn fx:id="colStudentId" prefWidth="133.99999618530273" text="Student ID" />
             <TableColumn fx:id="colStudentName" prefWidth="242.0" text="Name" />
             <TableColumn fx:id="colAddress" prefWidth="187.0" text="Address" />
-            <TableColumn fx:id="colContact" prefWidth="140.0" text="Contact" />
-            <TableColumn fx:id="colDob" prefWidth="154.0" text="DOB" />
-            <TableColumn fx:id="colGender" prefWidth="102.0" text="Gender" />
+            <TableColumn fx:id="colContact" prefWidth="216.0" text="Contact" />
+            <TableColumn fx:id="colDob" prefWidth="179.0" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="231.0" text="Gender" />
          </columns>
       </TableView>
-      <Separator layoutX="26.0" layoutY="469.0" prefHeight="0.0" prefWidth="1036.0" />
+      <Separator layoutX="26.0" layoutY="469.0" prefHeight="3.0" prefWidth="1213.0" />
       <Label layoutX="59.0" layoutY="13.0" text="Manage Student" textFill="#112d4e">
          <font>
             <Font size="43.0" />
@@ -43,18 +43,18 @@
          </font>
       </Label>
       <TextField fx:id="txtName" layoutX="197.0" layoutY="531.0" prefHeight="33.0" prefWidth="282.0" promptText="Irosh" />
-      <Label layoutX="596.0" layoutY="484.0" text="Date Of Birth">
+      <Label layoutX="777.0" layoutY="484.0" text="Date Of Birth">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="599.0" layoutY="536.0" text="Gender">
+      <Label layoutX="777.0" layoutY="539.0" text="Gender">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Separator layoutX="14.0" layoutY="66.0" prefHeight="0.0" prefWidth="1036.0" />
-      <ButtonBar layoutX="644.0" layoutY="640.0" prefHeight="52.0" prefWidth="367.0">
+      <Separator layoutX="14.0" layoutY="66.0" prefHeight="3.0" prefWidth="1231.0" />
+      <ButtonBar layoutX="884.0" layoutY="637.0" prefHeight="52.0" prefWidth="367.0">
          <buttons>
             <JFXButton fx:id="btnAdd" buttonType="RAISED" focusTraversable="false" onAction="#btnAddOnAction" prefHeight="35.0" prefWidth="151.0" style="-fx-background-color: lightgreen;" text="Add">
                <font>
@@ -71,7 +71,7 @@
                </font></JFXButton>
          </buttons>
       </ButtonBar>
-      <TextField fx:id="txtSearch" layoutX="743.0" layoutY="78.0" onKeyPressed="#txtSearchOnAction" prefHeight="33.0" prefWidth="282.0" promptText="Search Bar" />
+      <TextField fx:id="txtSearch" layoutX="969.0" layoutY="77.0" onKeyPressed="#txtSearchOnAction" prefHeight="33.0" prefWidth="282.0" promptText="Search Bar" />
       <Label layoutX="77.0" layoutY="583.0" text="Address">
          <font>
             <Font size="20.0" />
@@ -84,12 +84,12 @@
          </font>
       </Label>
       <TextField fx:id="txtContact" layoutX="199.0" layoutY="628.0" prefHeight="33.0" prefWidth="282.0" promptText="0714066967" />
-      <DatePicker fx:id="cmbDob" layoutX="769.0" layoutY="483.0" showWeekNumbers="true" style="-fx-background-color: #DFF6FF;" />
-      <RadioButton fx:id="rBtnMale" focusTraversable="false" layoutX="769.0" layoutY="540.0" mnemonicParsing="false" text="Male">
+      <DatePicker fx:id="cmbDob" layoutX="959.0" layoutY="480.0" showWeekNumbers="true" style="-fx-background-color: #DFF6FF;" />
+      <RadioButton fx:id="rBtnMale" focusTraversable="false" layoutX="959.0" layoutY="541.0" mnemonicParsing="false" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="gender" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="rBtnFemale" focusTraversable="false" layoutX="769.0" layoutY="566.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
+      <RadioButton fx:id="rBtnFemale" focusTraversable="false" layoutX="959.0" layoutY="567.0" mnemonicParsing="false" text="Female" toggleGroup="$gender" />
    </children>
 </AnchorPane>

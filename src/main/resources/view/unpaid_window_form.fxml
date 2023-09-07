@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.UnpaidWindowFormController">
+<AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1301.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.hostelManagement.controller.UnpaidWindowFormController">
    <children>
-      <TableView fx:id="tblStudents" layoutX="58.0" layoutY="111.0" onMouseClicked="#tblStudentsOnMouseClicked" prefHeight="581.0" prefWidth="1054.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+      <TableView fx:id="tblStudents" layoutX="58.0" layoutY="111.0" onMouseClicked="#tblStudentsOnMouseClicked" prefHeight="581.0" prefWidth="1215.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <columns>
             <TableColumn fx:id="colStdId" prefWidth="152.0" text="ID" />
             <TableColumn fx:id="colStdName" prefWidth="366.0" text="Name" />
-            <TableColumn fx:id="colStdAddress" prefWidth="289.0" text="Address" />
-            <TableColumn fx:id="colMobile" prefWidth="246.0" text="Mobile" />
+            <TableColumn fx:id="colStdAddress" prefWidth="389.0" text="Address" />
+            <TableColumn fx:id="colMobile" prefWidth="307.0" text="Mobile" />
          </columns>
       </TableView>
       <Label layoutX="104.0" layoutY="14.0" text="View Un-Paid Students">
@@ -28,7 +28,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <Separator layoutX="14.0" layoutY="65.0" prefHeight="0.0" prefWidth="1054.0" />
+      <Separator layoutX="14.0" layoutY="67.0" prefHeight="1.0" prefWidth="1249.0" />
       <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="23.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;" text="Back">
          <font>
             <Font name="System Bold" size="13.0" />
