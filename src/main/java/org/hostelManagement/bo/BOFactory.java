@@ -1,5 +1,6 @@
 package org.hostelManagement.bo;
 
+import org.hostelManagement.bo.custom.impl.RoomBOImpl;
 import org.hostelManagement.bo.custom.impl.StudentBOImpl;
 import org.hostelManagement.bo.custom.impl.UserBOImpl;
 
@@ -28,8 +29,8 @@ public class BOFactory {
                 return new UserBOImpl();
             case STUDENT:
                return new StudentBOImpl();
-//            case ROOM:
-//                return new RoomBOImpl();
+            case ROOM:
+                return new RoomBOImpl();
 //           case RESERVATION:
 //                return new ReservationBoImpl();
             default:

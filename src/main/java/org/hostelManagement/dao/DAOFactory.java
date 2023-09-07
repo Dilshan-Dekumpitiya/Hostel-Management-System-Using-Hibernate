@@ -1,5 +1,6 @@
 package org.hostelManagement.dao;
 
+import org.hostelManagement.dao.custom.impl.RoomDAOImpl;
 import org.hostelManagement.dao.custom.impl.StudentDAOImpl;
 import org.hostelManagement.dao.custom.impl.UserDAOImpl;
 
@@ -27,9 +28,9 @@ public class DAOFactory implements SuperDAO {
 
             case STUDENT:
                 return new StudentDAOImpl();
-//
-//            case ROOM:
-//                return new RoomDAOImpl();
+
+            case ROOM:
+                return new RoomDAOImpl();
 //
 //            case RESERVATION:
 //                return new ReservationDAOImpl();

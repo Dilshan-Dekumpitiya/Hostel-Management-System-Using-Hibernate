@@ -42,30 +42,6 @@ public class DashboardWindowFormController implements Initializable {
 
     }
 
-    @FXML
-    void btnLogoutOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/login_window_form.fxml"));
-            loadWindow(anchorPane);
-            mainRoot.getChildren().clear();
-            mainRoot.getChildren().add(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
-    void btnResavationOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
-        try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/reservation_window_form.fxml"));
-            loadWindow(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     void btnRoomOnAction(ActionEvent event) {
@@ -78,6 +54,19 @@ public class DashboardWindowFormController implements Initializable {
         }
     }
 
+
+    @FXML
+    void btnResavationOnAction(ActionEvent event) {
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/reservation_window_form.fxml"));
+            loadWindow(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @FXML
     void btnUserOnAction(ActionEvent event) {
         AnchorPane anchorPane = null;
@@ -87,6 +76,20 @@ public class DashboardWindowFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void btnLogoutOnAction(ActionEvent event) {
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/login_window_form.fxml"));
+            loadWindow(anchorPane);
+            mainRoot.getChildren().clear();
+            mainRoot.getChildren().add(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void setUI(String windowName){
