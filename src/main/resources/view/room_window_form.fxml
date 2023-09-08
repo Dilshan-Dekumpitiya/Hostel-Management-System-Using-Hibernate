@@ -68,7 +68,6 @@
                </font></JFXButton>
          </buttons>
       </ButtonBar>
-      <TextField fx:id="txtSearch" layoutX="966.0" layoutY="77.0" onAction="#txtSearchOnAction" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="33.0" prefWidth="282.0" promptText="Search Bar" />
       <ComboBox fx:id="cmbType" layoutX="203.0" layoutY="580.0" prefHeight="31.0" prefWidth="282.0" />
    </children>
 </AnchorPane>

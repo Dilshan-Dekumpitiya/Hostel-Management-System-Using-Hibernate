@@ -62,9 +62,6 @@ public class RoomWindowFormController implements Initializable {
     @FXML
     private JFXButton btnDelete;
 
-    @FXML
-    private TextField txtSearch;
-
     ObservableList<RoomTM> obList = FXCollections.observableArrayList();
 
 
@@ -234,15 +231,6 @@ public class RoomWindowFormController implements Initializable {
         }
     }
 
-    @FXML
-    void txtSearchOnAction(ActionEvent event) {
-
-    }
-
-    @FXML
-    void txtSearchOnKeyReleased(KeyEvent event) {
-
-    }
 
     private void getAll() {
 

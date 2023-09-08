@@ -164,8 +164,10 @@ public class StudentDAOImpl implements StudentDAO {
 
         try {
 
-            Query query = session.createQuery("FROM Student WHERE name LIKE '%" + text + "%'" );
+            Query query = session.createQuery("FROM Student WHERE name LIKE '%" + text + "%' OR address LIKE '%" + text + "%'" );
             List<Student> list = query.list();
+
+            transaction.commit();
 
             return list;
 

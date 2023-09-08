@@ -43,26 +43,20 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-//        try {
-//            session.save(entity);
-//
-//            transaction.commit();
-//
-//            return true;
-//        } catch (Exception e) {
-//            transaction.rollback();
-//            e.printStackTrace();
-//            return false;
-//        } finally {
-//            session.close();
-//        }
+        try {
+            session.save(entity);
 
-        session.save(entity);
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
 
-        return true;
 
     }
 
