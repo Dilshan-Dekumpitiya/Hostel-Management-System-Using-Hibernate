@@ -17,15 +17,22 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Student");
-        nativeQuery.addEntity(Student.class);
-        List<Student> customers = nativeQuery.list();
+        try {
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Student");
+            nativeQuery.addEntity(Student.class);
+            List<Student> students = nativeQuery.list();
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
+            return students;
 
-        return customers;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
 
     }
 
@@ -34,12 +41,18 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(student);
+        try {
+            session.persist(student);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
 
-        transaction.commit();
-        session.close();
-
-        return true;
     }
 
     @Override
@@ -47,12 +60,17 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(student);
-
-        transaction.commit();
-        session.close();
-
-        return true;
+        try {
+            session.update(student);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -60,14 +78,21 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("SELECT student_id FROM Student ORDER BY student_id DESC");
-        query.setMaxResults(1);
-        List results = query.list();
+        try {
+            Query query = session.createQuery("SELECT student_id FROM Student ORDER BY student_id DESC");
+            query.setMaxResults(1);
+            List results = query.list();
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return (results.size() == 0) ? null : (String) results.get(0);
+            return (results.size() == 0) ? null : (String) results.get(0);
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return "0";
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -75,15 +100,21 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Student student = new Student();
-        student.setStudent_id(id);
-        session.remove(student);
+        try {
+            Student student = new Student();
+            student.setStudent_id(id);
+            session.remove(student);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
 
 
-        transaction.commit();
-        session.close();
-
-        return true;
     }
 
     @Override
@@ -91,12 +122,16 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Student student = session.get(Student.class, id);
+        try {
 
-        transaction.commit();
-        session.close();
-
-        return student;
+            return session.get(Student.class, id);
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -104,26 +139,43 @@ public class StudentDAOImpl implements StudentDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery nativeQuery = session.createNativeQuery("SELECT DISTINCT * FROM student s JOIN reservation r on s.student_id = r.student_student_id WHERE r.status='un-paid'");
-        nativeQuery.addEntity(Student.class);
-        List<Student> students = nativeQuery.list();
+        try {
 
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT DISTINCT * FROM student s JOIN reservation r on s.student_id = r.student_student_id WHERE r.status='un-paid'");
+            nativeQuery.addEntity(Student.class);
+            List<Student> students = nativeQuery.list();
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return students;
+            return students;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public List<Student> searchStudentByText(String text) {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
+        Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("FROM Student WHERE name LIKE '%" + text + "%'" );
-        List<Student> list = query.list();
+        try {
 
-        return list;
+            Query query = session.createQuery("FROM Student WHERE name LIKE '%" + text + "%'" );
+            List<Student> list = query.list();
 
+            return list;
+
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
 
     }
 }

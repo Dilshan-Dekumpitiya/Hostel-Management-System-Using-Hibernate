@@ -122,6 +122,11 @@ public class RoomWindowFormController implements Initializable {
                if (isAdded) {
 
                    refreshTable();
+                   cmbType.getItems().clear();
+                   txtKeyMoney.clear();
+                   txtQty.clear();
+                   setRoomTypes();
+
                    new Alert(Alert.AlertType.CONFIRMATION, "Room  Added successful :) !!!").show();
                } else {
                    new Alert(Alert.AlertType.ERROR, "Room  Added Unsuccessful :( !!!").show();
@@ -138,7 +143,8 @@ public class RoomWindowFormController implements Initializable {
     }
 
     private boolean checkRegex() {
-        return RegExFactory.getInstance().getPattern(RegExType.DOUBLE).matcher(txtKeyMoney.getText()).matches() && RegExFactory.getInstance().getPattern(RegExType.NAME).matcher(cmbType.getSelectionModel().getSelectedItem()).matches() && RegExFactory.getInstance().getPattern(RegExType.INTEGER).matcher(txtQty.getText()).matches();
+        return true;
+        //return RegExFactory.getInstance().getPattern(RegExType.DOUBLE).matcher(txtKeyMoney.getText()).matches() && RegExFactory.getInstance().getPattern(RegExType.NAME).matcher(cmbType.getSelectionModel().getSelectedItem()).matches() && RegExFactory.getInstance().getPattern(RegExType.INTEGER).matcher(txtQty.getText()).matches();
 
     }
 
@@ -201,6 +207,11 @@ public class RoomWindowFormController implements Initializable {
             refreshTable();
             btnAdd.setDisable(false);
             new Alert(Alert.AlertType.CONFIRMATION, "Room  Updated successful :) !!!").show();
+
+            refreshTable();
+            clearAll();
+            setRoomID();
+
         } else {
             new Alert(Alert.AlertType.ERROR, "Room  Updated Unsuccessful :( !!!").show();
 
@@ -267,5 +278,7 @@ public class RoomWindowFormController implements Initializable {
         getAll();
         setRoomID();
     }
+
+
 
 }

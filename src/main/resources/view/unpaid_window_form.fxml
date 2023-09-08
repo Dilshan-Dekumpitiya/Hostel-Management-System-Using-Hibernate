@@ -29,7 +29,7 @@
          </font>
       </Label>
       <Separator layoutX="14.0" layoutY="67.0" prefHeight="1.0" prefWidth="1249.0" />
-      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="23.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;" text="Back">
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="23.0" onAction="#btnBackOnAction" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: #0066cc; -fx-background-radius: 10;" text="Back">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

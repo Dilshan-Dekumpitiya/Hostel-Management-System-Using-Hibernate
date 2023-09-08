@@ -17,14 +17,22 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Reservation");
-        nativeQuery.addEntity(Reservation.class);
-        List<Reservation> reservations = nativeQuery.list();
+        try {
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Reservation");
+            nativeQuery.addEntity(Reservation.class);
+            List<Reservation> reservations = nativeQuery.list();
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return reservations;
+            return reservations;
+
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
 
 
     }
@@ -34,6 +42,20 @@ public class ReservationDAOImpl implements ReservationDAO {
 
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
+
+//        try {
+//            session.save(entity);
+//
+//            transaction.commit();
+//
+//            return true;
+//        } catch (Exception e) {
+//            transaction.rollback();
+//            e.printStackTrace();
+//            return false;
+//        } finally {
+//            session.close();
+//        }
 
         session.save(entity);
 
@@ -49,26 +71,41 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(entity);
+        try {
+            session.update(entity);
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public String generateNewID() {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
-        Query query = session.createQuery("SELECT res_id FROM Reservation ORDER BY res_id DESC");
-        query.setMaxResults(1);
-        List results = query.list();
 
-        transaction.commit();
-        session.close();
+        try {
+            Query query = session.createQuery("SELECT res_id FROM Reservation ORDER BY res_id DESC");
+            query.setMaxResults(1);
+            List results = query.list();
 
-        return (results.size() == 0) ? null : (String) results.get(0);
+            transaction.commit();
+
+            return (results.size() == 0) ? null : (String) results.get(0);
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return " ";
+        } finally {
+            session.close();
+        }
 
     }
 
@@ -77,13 +114,23 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Reservation reservation = new Reservation();
-        reservation.setRes_id(id);
-        session.delete(reservation);
+        try {
+            Reservation reservation = new Reservation();
+            reservation.setRes_id(id);
+            session.delete(reservation);
 
-        transaction.commit();
-        session.close();
-        return true;
+            transaction.commit();
+
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+
+
 
 
     }
@@ -93,11 +140,18 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Reservation reservation = session.get(Reservation.class, id);
+        try {
+            Reservation reservation = session.get(Reservation.class, id);
 
-        transaction.commit();
-        session.close();
-        return reservation;
+            transaction.commit();
 
+            return reservation;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 }

@@ -19,12 +19,12 @@
          <children>
             <AnchorPane fx:id="root" prefHeight="706.0" prefWidth="1300.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
                <children>
-                  <Label layoutX="446.0" layoutY="139.0" text="D" textFill="#09076c">
+                  <Label layoutX="446.0" layoutY="139.0" text="D" textFill="#6f6fc9">
                      <font>
                         <Font name="Segoe Print" size="120.0" />
                      </font>
                   </Label>
-                  <Label layoutX="571.0" layoutY="139.0" text="24" textFill="#9e0368">
+                  <Label layoutX="571.0" layoutY="139.0" text="24" textFill="#2825c5">
                      <font>
                         <Font name="Segoe Print" size="120.0" />
                      </font>
@@ -44,7 +44,7 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="446.0" layoutY="44.0" text="Welcome" textFill="#09076c">
+                  <Label layoutX="446.0" layoutY="44.0" text="Welcome" textFill="#2825c5">
                      <font>
                         <Font name="Segoe Print" size="77.0" />
                      </font>

@@ -59,6 +59,13 @@ public class RegisterWindowFormController implements Initializable {
 
 
                     if (isAdded) {
+                        txtUserName.clear();
+                        txtPassword.clear();
+                        txtRePassword.clear();
+                        txtPasswordHint.clear();
+
+                        txtUserName.requestFocus();
+
                         new Alert(Alert.AlertType.CONFIRMATION, "User Registered!").show();
                     }
                 } else {

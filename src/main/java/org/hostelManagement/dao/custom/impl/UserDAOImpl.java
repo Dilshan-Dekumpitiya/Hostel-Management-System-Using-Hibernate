@@ -15,19 +15,25 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> getAll() {
 
-
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM User");
-        nativeQuery.addEntity(User.class);
-        List<User> users = nativeQuery.list();
+        try {
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM User");
+            nativeQuery.addEntity(User.class);
+            List<User> users = nativeQuery.list();
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
+            return users;
 
-        return users;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -35,12 +41,19 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(user);
+        try {
+            session.persist(user);
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -49,12 +62,21 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(user);
+        try {
+            session.update(user);
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+
+
     }
 
     @Override
@@ -67,14 +89,20 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        User user = session.get(User.class, id);
-        session.remove(user);
+        try {
+            User user = session.get(User.class, id);
+            session.remove(user);
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
-
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -82,13 +110,19 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        User user = session.get(User.class, id);
+        try {
+            User user = session.get(User.class, id);
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
-
-        return user;
+            return user;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -96,14 +130,21 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        User current_user = session.get(User.class, user.getId());
-        if (current_user.getPassword().equals(user.getPassword())) {
-            return true;
+        try {
+            User current_user = session.get(User.class, user.getId());
+            if (current_user.getPassword().equals(user.getPassword())) {
+                return true;
+            }
+
+            transaction.commit();
+
+            return false;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
         }
-
-        transaction.commit();
-        session.close();
-
-        return false;
     }
 }

@@ -35,12 +35,12 @@
         <ButtonBar layoutX="736.0" layoutY="674.0" prefHeight="40.0" prefWidth="319.0" />
         <ButtonBar layoutX="74.0" layoutY="72.0" prefHeight="40.0" prefWidth="1173.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <buttons>
-                <JFXButton fx:id="btnViewUnpaidStudent" buttonType="RAISED" onAction="#btnViewUnpaidStudentOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: lightyellow;" text="View Unpaid">
+                <JFXButton fx:id="btnViewUnpaidStudent" buttonType="RAISED" onAction="#btnViewUnpaidStudentOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #d2dae2;" text="View Unpaid">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnAddReservation" buttonType="RAISED" onAction="#btnAddReservationOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: lightgreen;" text="New Reservation">
+                <JFXButton fx:id="btnAddReservation" buttonType="RAISED" onAction="#btnAddReservationOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #5352ed;" text="New Reservation">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -49,12 +49,12 @@
         </ButtonBar>
         <ButtonBar layoutX="74.0" layoutY="418.0" prefHeight="40.0" prefWidth="1173.0" style="-fx-background-color: white; -fx-background-radius: 5;">
             <buttons>
-                <JFXButton fx:id="btnMarkAsPaid" buttonType="RAISED" onAction="#btnMarkAsPaidOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: lightblue;" text="Mark as paid">
+                <JFXButton fx:id="btnMarkAsPaid" buttonType="RAISED" onAction="#btnMarkAsPaidOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #9b59b6;" text="Mark as paid">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #ff9999;" text="Delete">
+                <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #e74c3c;" text="Delete">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>

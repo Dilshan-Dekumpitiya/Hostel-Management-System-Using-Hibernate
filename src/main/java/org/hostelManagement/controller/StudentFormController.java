@@ -1,6 +1,7 @@
 package org.hostelManagement.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -101,6 +102,7 @@ public class StudentFormController implements Initializable {
         getAll();
         setCellValueFactory();
         regExFactory = RegExFactory.getInstance();
+        Platform.runLater(() -> txtName.requestFocus());
 
         txtSearch.textProperty().addListener((observableValue, previous, current) -> {
             if (!Objects.equals(previous, current)) {
@@ -235,15 +237,16 @@ public class StudentFormController implements Initializable {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
         StudentTM selectedItem = tblStudents.getSelectionModel().getSelectedItem();
+        boolean deleteStudent = studentBO.deleteStudent(selectedItem.getStudent_id());
         try {
-            if (selectedItem != null) {
-                studentBO.deleteStudent(selectedItem.getStudent_id());
+            if (selectedItem != null && deleteStudent==true) {
+
                 new Alert(Alert.AlertType.INFORMATION, "Student Deleted").show();
                 refreshTable();
                 clearAll();
 
             } else {
-                new Alert(Alert.AlertType.ERROR, "Select Student first!").show();
+                new Alert(Alert.AlertType.ERROR, "Select Student first! or Delete Student from Reservation").show();
             }
         } catch (RuntimeException e) {
             e.printStackTrace();
@@ -341,5 +344,15 @@ public class StudentFormController implements Initializable {
         txtAddress.clear();
         txtContact.clear();
         txtName.clear();
+    }
+
+    @FXML
+    void txtNameOnAction(ActionEvent event) {
+        txtAddress.requestFocus();
+    }
+
+    @FXML
+    void txtAddressOnAction(ActionEvent event) {
+        txtContact.requestFocus();
     }
 }

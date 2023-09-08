@@ -17,15 +17,21 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Room");
-        nativeQuery.addEntity(Room.class);
-        List<Room> rooms = nativeQuery.list();
+        try {
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Room");
+            nativeQuery.addEntity(Room.class);
+            List<Room> rooms = nativeQuery.list();
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
-
-        return rooms;
+            return rooms;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -33,12 +39,20 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.persist(entity);
+        try {
+            session.persist(entity);
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
+
     }
 
     @Override
@@ -47,12 +61,19 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.update(entity);
+        try {
+            session.update(entity);
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return true;
+            return true;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -60,14 +81,21 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("SELECT room_id FROM Room ORDER BY room_id DESC");
-        query.setMaxResults(1);
-        List results = query.list();
+        try {
+            Query query = session.createQuery("SELECT room_id FROM Room ORDER BY room_id DESC");
+            query.setMaxResults(1);
+            List results = query.list();
 
-        transaction.commit();
-        session.close();
+            transaction.commit();
 
-        return (results.size() == 0) ? null : (String) results.get(0);
+            return (results.size() == 0) ? null : (String) results.get(0);
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return " ";
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -75,14 +103,22 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Room room = new Room();
-        room.setRoom_id(id);
-        session.remove(room);
+        try {
+            Room room = new Room();
+            room.setRoom_id(id);
+            session.remove(room);
 
 
-        transaction.commit();
-        session.close();
-        return true;
+            transaction.commit();
+            return true;
+
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return false;
+        } finally {
+            session.close();
+        }
     }
 
     @Override
@@ -91,14 +127,19 @@ public class RoomDAOImpl implements RoomDAO {
         Session session = FactoryConfiguration.getFactoryConfiguration().getSession();
         Transaction transaction = session.beginTransaction();
 
-        Room room = session.get(Room.class, id);
+        try {
+            Room room = session.get(Room.class, id);
 
+            transaction.commit();
 
-        transaction.commit();
-        session.close();
-
-        return room;
-
+            return room;
+        } catch (Exception e) {
+            transaction.rollback();
+            e.printStackTrace();
+            return null;
+        } finally {
+            session.close();
+        }
 
     }
 }
