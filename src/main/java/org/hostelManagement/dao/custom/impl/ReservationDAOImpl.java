@@ -18,7 +18,7 @@ public class ReservationDAOImpl implements ReservationDAO {
         Transaction transaction = session.beginTransaction();
 
         try {
-            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Reservation");
+            NativeQuery nativeQuery = session.createNativeQuery("SELECT * FROM Reservation"); //Define from Entity Class Name
             nativeQuery.addEntity(Reservation.class);
             List<Reservation> reservations = nativeQuery.list();
 

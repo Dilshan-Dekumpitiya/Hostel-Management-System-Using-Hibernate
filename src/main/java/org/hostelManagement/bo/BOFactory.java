@@ -1,9 +1,6 @@
 package org.hostelManagement.bo;
 
-import org.hostelManagement.bo.custom.impl.ReservationBoImpl;
-import org.hostelManagement.bo.custom.impl.RoomBOImpl;
-import org.hostelManagement.bo.custom.impl.StudentBOImpl;
-import org.hostelManagement.bo.custom.impl.UserBOImpl;
+import org.hostelManagement.bo.custom.impl.*;
 
 public class BOFactory {
 
@@ -18,7 +15,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        USER, STUDENT, ROOM , RESERVATION
+        USER, STUDENT, ROOM , RESERVATION,DASHBOARD
 
     }
 
@@ -34,6 +31,8 @@ public class BOFactory {
                 return new RoomBOImpl();
            case RESERVATION:
                 return new ReservationBoImpl();
+            case DASHBOARD:
+                return new DashBoardBoImpl();
             default:
                 return null;
         }
